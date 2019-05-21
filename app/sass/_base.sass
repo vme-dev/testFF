@@ -1,0 +1,61 @@
+@import "vars"
+
+*
+	box-sizing: border-box
+	&:before, &:after
+		box-sizing: border-box
+
+html, body
+	height: 100%
+
+body
+	font-size: 14px
+	min-width: 320px
+	position: relative
+	background-color: #ffffff
+	font-family: roboto, sans-serif
+	font-weight: 300
+	color: #ffffff
+	line-height: 1.714
+	overflow-x: hidden
+	opacity: 1
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+a 
+	text-decoration: none
+	color: inherit
+
+li 
+	list-style: none
+
+.content
+    max-width: 960px
+    margin: 0px auto
+
+.button
+	display: inline-block
+	padding: 19px 14px 19px
+	border: 1px solid $light-blue
+	border-radius: 2px
+	font-family: 'hammersmith-one'
+	font-size: 16px
+	line-height: 0
+	color: $light-blue
+	text-transform: uppercase
+	cursor: pointer
+	&:hover
+		color: lighten($light-blue, 10%)
+		border-color: lighten($light-blue, 10%)
+	&:active
+		color: darken($light-blue, 10%)
+		border-color: darken($light-blue, 10%)
+	&:focus
+		color: lighten($light-blue, 10%)
+		border-color: lighten($light-blue, 10%)

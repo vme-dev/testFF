@@ -1,0 +1,151 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/**/	
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	/**/	
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	.nav-button
+		display: inline-block
+		
+	.head-list
+		display: none
+		width: 100%
+		padding: 20px 0px
+		position: absolute
+		top: 0px
+		left: 0px
+		text-align: center
+		background-color: rgba(0,0,0,.7)
+		font-size: 1.5em
+		.head-item
+			display: block
+			margin-left: 0px
+			margin-bottom: 30px
+	
+	.expertise-item
+		width: 50%
+		&:nth-child(1)
+			border-left: 0px #ebebeb solid
+		&:nth-child(2)
+			border-left: 1px #ebebeb solid
+		&:nth-child(3)
+			
+		&:nth-child(4)
+			border-left: 1px #ebebeb solid
+			border-bottom: 1px #ebebeb solid
+			
+		&:nth-child(5)
+			border-left: 0px #ebebeb solid
+			border-bottom: 0px #ebebeb solid
+			
+		&:nth-child(6)
+			border-bottom: 0px #ebebeb solid
+	.team-list
+		flex-wrap: wrap
+	.team-item
+		width: 50%
+		margin-bottom: 30px
+
+	.works-item
+    	width: 33.33%
+	
+	.wrap-contact
+		margin: 70px auto
+		flex-direction: column
+
+	.contact-form, .clients
+		max-width: 480px
+		margin: 0px auto 30px
+		padding: 0px
+	
+	.footer-block
+		width: 50%
+	
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	.wrap-story
+		flex-direction: column
+	.story-logo
+		margin-bottom: 30px
+	.our-story
+		width: 90%
+	.expertise-item
+		width: 100%
+		border-left: 0px #ebebeb solid
+		border-bottom: 1px #ebebeb solid
+		&:nth-child(5)
+			border-bottom: 1px #ebebeb solid
+		&:nth-child(6)
+			border-bottom: 0px #ebebeb solid
+	.team
+		background-image: none
+
+	.team-item
+		width: 100%
+
+	.works-item
+    	width: 50.00%
+
+	.testimonials-people
+		max-width: 300px
+	.people-list
+		max-width: 251px
+
+	.button-arrow 
+		display: inline-block
+		position: static
+		width: 90px
+		&.prev
+			transform: translate(0%,0%)
+		&.next
+			transform: translate(0%,0%)
+	
+	.footer-block
+		width: 100%
+	.footer-bot
+		flex-direction: column
+	.other-link-list
+		margin-bottom: 30px
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	.head-list
+		height: 100vh
+	.head-topic
+		margin-bottom: 10px
+	.head-text
+		margin-bottom: 10px
+	.head-toolbar
+		margin-bottom: 30px
+	
+	
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/

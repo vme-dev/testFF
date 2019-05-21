@@ -1,0 +1,800 @@
+@import "fonts"
+@import "libs"
+@import "base"
+@import "vars"
+
+/*********************************************/
+  /* HEAD SECTION */
+/*********************************************/
+
+.head.section
+    height: 100vh
+    overflow: hidden
+
+.wrap-head
+    height: inherit
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding: 0px $gutter
+
+.head
+    background-image: url(../img/background.jpg)
+    background-size: cover
+    background-position: center
+    position: relative
+    text-align: center
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-image: $overlay-gr
+        opacity: .85
+    .content
+        position: relative
+        z-index: 1
+
+/* HEADER > LOGO & NAVIGATION */
+
+.head-top
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin: 15px 0px
+
+.head-logo
+    height: 50px
+    margin-left: 1px
+    padding-left: 55px
+    background-image: url(../img/logo.png)
+    background-repeat: no-repeat
+    .head-logo-text
+        display: inline-block
+        width: 73px
+        height: 50px
+        line-height: 50px
+        font-size: 0px
+        background-image: url(../img/tajam.svg)
+        background-position-y: center
+        background-repeat: no-repeat
+
+.nav-button
+		display: none
+
+.head-list
+    font-family: roboto-black
+    font-size: 13px
+    margin: 0px
+    padding: 0px
+
+.head-item
+    display: inline-block
+    margin-left: 15px
+    padding: 0px 5px
+    &:nth-child(1)
+        margin-left: 0px
+    &.active
+        color: $light-blue
+    &:hover
+        color: lighten($light-blue, 40%)
+    &:active
+        color: darken($light-blue, 10%)
+
+/* CONTENT > TOPIC & TEXT & BUTTON */
+
+.head-topic
+    margin: 0px 0px 28px
+    padding-bottom: 18px
+    font-family: playfair-display-black
+    font-size: 32px
+    line-height: 1.2
+    position: relative
+    &::after
+        content: ''
+        display: block
+        height: 1px
+        width: 100px
+        margin: 18px auto 0px
+        background-color: $light-blue
+.head-text
+    margin: 0px auto 48px
+    max-width: 780px
+.head-button
+
+/* TOOLBAR > BUTTON_GROUP */
+
+.head-toolbar
+    margin-bottom: 68px
+
+.toolbar-group
+    margin: 0px
+    padding: 0px
+    font-size: 0px
+
+.toolbar-item
+    display: inline-block
+    width: 10px
+    height: 10px
+    margin: 0px 2.5px
+    border: 1px solid #bbbabc
+    border-radius: 50%
+    &.active
+        background-color: $light-blue
+        border-color: $light-blue
+    &:hover
+        background-color: lighten(#bbbabc, 10%)
+    &:active
+        background-color: darken(#bbbabc, 10%)
+
+/*********************************************/
+  /* ABOUT-STORY SECTION */
+/*********************************************/
+
+.about-story
+    margin: 70px 0px
+    background: #ffffff
+    color: #413d4b
+    
+.wrap-story
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.story-logo
+    width: 41.66%
+    padding: 0px $gutter
+    .story-logo-img
+        padding-left: 8.33%
+
+.our-story
+    width: 58.33%
+    padding: 0px $gutter
+    .our-story-header
+        margin: 0px
+        margin-bottom: 25px
+        font-family: playfair-display-bold
+        font-size: 22px
+        text-transform: uppercase
+    .our-story-text
+        margin-bottom: 25px
+
+/*********************************************/
+  /* ABOUT-VIDEO SECTION */
+/*********************************************/
+
+.about-video
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 70vh
+    background-image: url(../img/background_2.jpg)
+    background-size: cover
+    background-position: center
+    position: relative
+    overflow: hidden
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-image: $overlay-gr
+        opacity: .85
+    .content
+        position: relative
+        z-index: 1
+
+.wrap-frame
+    position: relative
+    padding-bottom: 56.25%
+    padding-top: 30px
+    height: 0
+    overflow: hidden
+
+.wrap-frame iframe
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+.wrap-frame.hide iframe
+    opacity: 0
+
+.video-play
+   position: absolute
+   top: 50%
+   left: 50%
+   transform: translate(-50%,-50%)
+   text-align: center
+   cursor: pointer
+
+.play-button
+    height: 100px
+    width: 100px
+    margin: 0px auto 30px
+    border: 3px solid #ffffff
+    border-radius: 50%
+    background-image: url(../img/play.png)
+    background-position: 32px 24px
+    background-repeat: no-repeat
+.play-caption
+    font-family: roboto-black
+    font-size: 16px
+    line-height: 16px
+    text-transform: uppercase
+
+/*********************************************/
+  /* EXPERTISE SECTION */
+/*********************************************/
+
+.expertise
+    color: #333333
+.wrap-expertise
+    margin: 70px auto 70px
+    padding: 0px $gutter
+
+.expertise-title
+    text-align: center
+    margin-bottom: 46px
+    .expertise-topic
+        margin: 0px 0px 5px
+        font-family: playfair-display-bold
+        font-size: 
+        color: #413d4b
+        text-transform: uppercase
+    .expertise-text
+        font-family: playfair-display
+        font-size: 14px
+        color: #2f2d35
+        opacity: .75
+        position: relative
+        &::after
+            content: ''
+            display: block
+            width: 50px
+            height: 2px
+            margin: 18px auto 0px
+            background-color: #413d4b
+            opacity: .3
+
+.expertise-list
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    margin: 0px
+    padding: 0px
+    text-align: center
+    font-size: 14px
+
+.expertise-item
+    width: 33.33%
+    padding: 116px $gutter 36px
+    position: relative
+    border-left: 1px #ebebeb solid
+    border-bottom: 1px #ebebeb solid
+    &::before
+            content: ''
+            display: block
+            width: 49px
+            height: 50px
+            position: absolute
+            top: 30px
+            left: 50%
+            transform: translate(-50%,0%)
+            background-image: url(../img/css_sprites.png)
+            background-position: -79px -10px
+            background-repeat: no-repeat
+    &:nth-child(1)
+        border-left: 0px #ebebeb solid
+    &:nth-child(2)
+        &::before
+            width: 50px
+            background-position: -149px -10px
+    &:nth-child(3)
+        &::before
+            width: 28px
+            background-position: -10px -146px
+    &:nth-child(4)
+        border-left: 0px #ebebeb solid
+        border-bottom: 0px #ebebeb solid
+        &::before
+            width: 50px
+            background-position: -10px -10px
+    &:nth-child(5)
+        border-bottom: 0px #ebebeb solid
+        &::before
+            width: 41px
+            background-position: -149px -72px
+    &:nth-child(6)
+        border-bottom: 0px #ebebeb solid
+        &::before
+            width: 50px
+            background-position: -10px -77px
+
+.item-header
+    margin: 0px 0px 10px
+    font-family: roboto-black
+
+/*********************************************/
+  /* TEAM SECTION */
+/*********************************************/
+
+.team
+    background-image: url(../img/background_3.jpg)
+    background-size: cover
+    background-position: center
+    position: relative
+    overflow: hidden
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-image: $overlay-gr
+        opacity: .85
+    .content
+        position: relative
+        z-index: 1
+
+.wrap-team
+    margin: 68px auto
+    text-align: center
+
+.team-title
+    margin-bottom: 46px
+    .team-topic
+        margin: 0
+        font-family: playfair-display-bold
+        font-size: 22px
+        color: #ffffff
+    .team-text
+        font-family: playfair-display
+        font-size: 14px
+        color: #ffffff
+        position: relative
+        &::after
+            content: ''
+            display: block
+            width: 50px
+            height: 2px
+            margin: 14px auto 0px
+            background-color: #ffffff
+            opacity: .2
+
+.team-list
+    display: flex
+    justify-content: space-between
+    margin: 0px
+    padding: 0px
+    margin-bottom: 68px
+
+.team-item
+    width: 25%
+    padding: 0px $gutter
+
+.team-photo
+    padding-top: 104.1%
+    background: #f5f4f6
+
+.team-info
+    border: 1px rgba(225, 225, 225, .5) solid
+    .team-name
+        margin: 15px 0px 5px
+        font-family: roboto-black
+        font-size: 14px
+        color: #ffffff
+    .team-post
+        margin-bottom: 10px
+
+.team-footer
+    .team-footer-text
+        margin-bottom: 26px
+        font-size: 14px
+
+/*********************************************/
+  /* WORKS SECTION */
+/*********************************************/
+
+.works
+    text-align: center
+    overflow: hidden
+
+.works-title
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin: 68px auto
+    padding: 0px $gutter
+    color: #413d4b
+
+.wokrs-topic
+    margin: 0
+    font-family: playfair-display-bold
+    font-size: 22px
+    
+.works-link
+    font-size: 14px
+    .fa
+        padding-left: 4px
+        font-size: 20px
+        vertical-align: text-bottom
+        opacity: .7
+
+.works-list
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-start
+    margin: 0px 0px 70px
+    padding: 0
+
+.works-item
+    width: 16.66%
+    background: #b6b6b6
+    &:nth-child(4n+1)
+        background: #b6b6b6
+    &:nth-child(4n+2)
+        background: #acacac
+    &:nth-child(4n+3)
+        background: #a1a1a1
+    &:nth-child(4n+4)
+        background: #8a8a8a
+
+.works-item-inner
+    padding-top: 75%
+
+.works-button
+    margin-bottom: 70px
+
+/*********************************************/
+  /* TESTIMONIALS SECTION */
+/*********************************************/
+
+.testimonials
+    background-image: url(../img/background_3.jpg)
+    background-size: cover
+    background-position: center
+    position: relative
+    text-align: center
+    overflow: hidden
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-image: $overlay-gr
+        opacity: .85
+    .content
+        position: relative
+        z-index: 1
+
+.wrap-testimonials
+    margin: 70px auto
+
+.quotation-block
+    max-width: 800px
+    margin: 0px auto 40px
+    padding: 0px $gutter
+    font-family: playfair-display
+    
+.quote
+    margin-bottom: 40px
+    font-size: 100px
+    line-height: 0px
+
+.quotation
+    font-size: 16px
+
+.quotation-author
+    font-style: normal
+    
+.author-name
+    font-family: roboto-black
+    font-size: 14px
+
+.author-post
+    font-family: roboto
+    font-weight: 300
+    font-size: 13px
+
+.testimonials-people
+    max-width: 392px
+    margin: 0px auto
+    position: relative
+    
+.people-list
+    display: flex
+    justify-content: space-between
+    align-items: center
+    max-width: 330px
+    margin: 0px auto
+    padding: 0px
+    
+.people-item
+    width: 45px
+    height: 45px
+    border-radius: 50%
+    font-size: 0px
+    background-image: url(../img/css_sprites_face.png)
+    background-position: -100px -10px
+    background-repeat: no-repeat
+    &.active
+        width: 70px
+        height: 70px
+    &:nth-child(2)
+        background-position: -165px -10px
+    &:nth-child(3)
+        background-position: -10px -10px
+    &:nth-child(4)
+        background-position: -10px -100px
+    &:nth-child(5)
+        background-position: -75px -100px
+    overflow: hidden
+
+.button-arrow 
+    color: #9f9f9f
+    position: absolute
+    top: 50%
+    cursor: pointer
+    .fa
+        line-height: 1
+    &.prev
+        left: 0px
+        transform: translate(-50%,-50%)
+    &.next
+        right: 0px
+        transform: translate(50%,-50%)
+
+/*********************************************/
+  /* CONTACT SECTION */
+/*********************************************/
+   
+.wrap-contact
+    margin: 70px auto
+    display: flex
+    justify-content: space-between
+
+.contact-title
+    margin: 0px 0px 35px
+    padding: 0px $gutter
+    font-family: playfair-display-bold
+    font-size: 22px
+    text-transform: uppercase
+    color: #413d4b
+
+.contact-form
+    padding-right: 80px
+
+.main-form
+    max-width: 480px
+    padding: 0px $gutter
+    
+.form-input
+    width: 100%
+    height: 45px
+    margin-bottom: 23px
+    padding: 13px 20px
+    background-color: transparent
+    appearance: none
+    outline-style: none
+    font-size: 14px
+    border: 1px #e5e5e5 solid
+    border-radius: 2px;
+    color: #413d4b
+    &::placeholder
+        color: #413d4b
+        opacity: .5
+    &:focus
+        border: 1px $light-blue solid
+
+.form-textarea
+    height: 200px
+    resize: none
+
+.form-submit
+    background-color: transparent
+    padding: 19px 32px 19px
+    outline-style: none
+
+.clients
+    max-width: 400px
+    padding: 0px $gutter
+
+.clientslist
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-wrap: wrap
+    margin: 0
+    padding: 0px $gutter
+
+.clients-item
+    width: 40%
+    margin-bottom: 46px
+
+/*********************************************/
+  /* FOOTER SECTION */
+/*********************************************/
+
+.footer
+    background-image: url(../img/background_4.jpg)
+    background-size: cover
+    background-position: center
+    position: relative
+    text-align: center
+    overflow: hidden
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-image: $overlay-gr
+        opacity: .85
+    .content
+        position: relative
+        z-index: 1
+    .footer-block-title,
+    .head-logo
+        margin: 0px 0px 20px
+
+.wrap-footer
+    margin: 70px auto
+    
+.footer-top
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: flex-start
+    text-align: left
+    margin-bottom: 68px
+
+.footer-block
+    width: 33.33%
+    padding: 0px $gutter
+    
+.footer-block-title
+    padding: 7.5px 0px
+    font-family: roboto-black
+    font-size: 15px
+    text-transform: uppercase
+
+.address,.phone
+    padding-left: 30px
+    position: relative
+    &:before
+        content: ''
+        width: 14px
+        height: 19px
+        background-image: url(../img/css_icon.png)
+        background-position: -112px -10px
+        background-repeat: no-repeat
+        position: absolute
+        top: 0
+        left: 0  
+
+.address
+    display: block
+    margin-bottom: 22px
+.phone
+    display: block
+    &:before
+        width: 17px
+        height: 17px
+        background-position: -10px -75px
+
+.subscribe-form
+    display: flex
+    justify-content: space-between
+    .form-input
+        width: 71%
+        margin-right: $gutter
+        color: #ffffff
+        border: 1px solid rgba(255,255,255,0.5)
+        &:focus
+            border: 1px $light-blue solid
+        &::placeholder
+            color: #ffffff
+            opacity: .5
+    .subscribe-submit
+        width: 25%
+        height: 45px
+        padding: 0px
+        border-radius: 0px
+        background-color: rgba(255,255,255,0.5)
+        border: 0px solid rgba(255,255,255,0.5)
+        outline: none
+        font-size: 24px
+        color: #000
+        &:hover
+            background-color: rgba(255,255,255,0.3)
+        &:active
+            background-color: rgba(255,255,255,0.7)
+        &:focus
+            border: 1px solid $light-blue
+
+.soc-link-list
+    display: flex
+    justify-content: flex-start
+    margin: 0px
+    padding: 0px
+
+.soc-link-item
+    width: 35px
+    height: 35px
+    margin-right: 8px
+    border-radius: 50px
+    border: 1px solid rgba(255,255,255,0.5)
+    overflow: hidden
+
+.soc-link
+    display: block
+    margin: 0px auto
+    text-align: center
+    position: relative
+    top: 50%
+    transform: translate(0%,-51%)
+
+.footer-bot
+    display: flex
+    justify-content: space-between
+    padding: 0px $gutter
+    
+.other-link-list
+    margin: 0px
+    padding: 0px
+    font-size: 14px
+    text-transform: uppercase
+    color: #ffffff
+
+.other-link-item
+    display: inline-block
+    margin-right: 30px
+
+/*********************************************/
+  /* CHAT */
+/*********************************************/
+
+.chat-block
+    width: 400px
+    padding: 20px
+    position: fixed
+    top: 20px
+    left: 30px
+    border-radius: 10px
+    background: #fff
+    color: #000
+    z-index: 10
+    
+.message-field
+    height: 200px
+    padding: 10px
+    margin-bottom: 10px
+    background: #eee
+    overflow-y: auto
+    font-size: 16px
+    .name
+        font-weight: bold
+    .user_connected,
+    .user_disconnected
+        text-align: center
+
+.chat
+    display: none
+.open-chat
+    position: fixed
+    top: 100px
+    left: 30px
+    z-index: 10
+
+
+@import "media"
