@@ -33,48 +33,30 @@ $(function() {
 			return 0;
 		}
 
-		fetch('/getPort')
-            .then(function(res){
-				if (!res.ok) {
-                    throw Error(res.statusText);
-                }
-				return res;
-			})
-            .then(function (res){
-				return res.json()
-			})
-            .then(function(json){
-				
-				socket = io.connect('http://localhost:'+json.port,{
-					query: {
-						name: name
-					}
-				});
-		
-				socket.on('new_message', function (data) {
-					$messageField.append(message(data));
-					$messageField.scrollTop($messageField.height());
-				});
-			
-				socket.on('user_connected', function (user) {
-					$messageField.append(userConnected(user.name));
-					$messageField.scrollTop($messageField.height());
-				});
-		
-				socket.on('user_disconnected', function (user) {
-					$messageField.append(userDisconnected(user.name));
-					$messageField.scrollTop($messageField.height());
-				});
+		socket = io.connect(window.location.host,{
+			query: {
+				name: name
+			}
+		});
 
-				$chatName.val('');
-				$nameForm.hide();
-				$chat.show();
+		socket.on('new_message', function (data) {
+			$messageField.append(message(data));
+			$messageField.scrollTop($messageField.height());
+		});
+	
+		socket.on('user_connected', function (user) {
+			$messageField.append(userConnected(user.name));
+			$messageField.scrollTop($messageField.height());
+		});
 
-			})
-			.catch( function(err){
-				alert("Server error");
-				console.error(err);
-			});
+		socket.on('user_disconnected', function (user) {
+			$messageField.append(userDisconnected(user.name));
+			$messageField.scrollTop($messageField.height());
+		});
+
+		$chatName.val('');
+		$nameForm.hide();
+		$chat.show();
 	});
 
 	$chatForm.submit(function(event) {
