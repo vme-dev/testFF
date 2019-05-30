@@ -85,6 +85,46 @@
 
 /* CONTENT > TOPIC & TEXT & BUTTON */
 
+@keyframes center-to-right
+    0%   { left: 0% }
+    100% { left: 100% }
+
+@keyframes center-to-left
+    0%   { left: 0% } 
+    100% { left: -100% }
+
+@keyframes right-to-center
+    0%   { left: 100% }
+    75%  { left: -10% }
+    100% { left: 0% }
+
+@keyframes left-to-center
+    0%   { left: -100% }
+    75%  { left: 10% } 
+    100% { left: 0% }
+
+.head-content-group
+    position: relative
+    overflow: hidden
+    height: 100%
+.head-content
+    width: 100%
+    position: absolute
+    left: 100%
+    top: 50%
+    transform: translate(0%,-50%)
+    &.active
+        left: 0%
+    &.center-to-right
+        animation: center-to-right 1s ease 1
+    &.center-to-left
+        animation: center-to-left 1s ease 1
+    &.right-to-center
+        animation: right-to-center 1s ease 1
+    &.left-to-center
+        animation: left-to-center 1s ease 1
+    
+
 .head-topic
     margin: 0px 0px 28px
     padding-bottom: 18px
@@ -121,11 +161,11 @@
     margin: 0px 2.5px
     border: 1px solid #bbbabc
     border-radius: 50%
+    &:hover
+        background-color: lighten(#bbbabc, 10%)
     &.active
         background-color: $light-blue
         border-color: $light-blue
-    &:hover
-        background-color: lighten(#bbbabc, 10%)
     &:active
         background-color: darken(#bbbabc, 10%)
 
@@ -765,11 +805,12 @@
 /*********************************************/
 
 .chat-block
-    width: 400px
+    display: none
+    width: 440px
     padding: 20px
     position: fixed
     top: 20px
-    left: 30px
+    left: 20px
     border-radius: 10px
     background: #fff
     color: #000
@@ -793,7 +834,7 @@
 .open-chat
     position: fixed
     top: 100px
-    left: 30px
+    left: 20px
     z-index: 10
 
 

@@ -83,3 +83,92 @@ $(function() {
 
 });
 
+(function () {
+	var $toolbarGroup = $(".toolbar-item");
+	var $headContent = $(".head-content");
+
+	var size = $headContent.length;
+	var counter = 0;
+	var index = 0;
+
+	function timer () {
+		if( counter == (size -1) ) { 
+			$(".head-content")
+				.eq( counter )
+				.toggleClass("center-to-left active")
+				.end()
+				.eq( 0 )
+				.toggleClass("right-to-center active");
+			counter = 0;
+			changeToolbar(counter)
+		 } else {
+			toLeft(); 
+		 }
+	}
+
+	var timerId = setInterval( timer , 5000);
+
+	$(".head-content").on("animationend", function () {
+		$(this).removeClass("center-to-right center-to-left right-to-center left-to-center");
+	})
+
+	$toolbarGroup.on('click', function (e) {
+		changeToolbar( $(this).index() );
+		console.log(counter == index);
+		if ( counter == index) { return 0 };
+		clearInterval(timerId);
+
+		if (counter < index) {
+			$(".head-content").eq( counter ).toggleClass("center-to-left active").end().eq(index).toggleClass("right-to-center active");
+			counter = index;
+		} else {
+			$(".head-content").eq( counter ).toggleClass("center-to-right active").end().eq(index).toggleClass("left-to-center active");
+			counter = index;
+		}
+
+		timerId = setInterval( timer , 5000);
+	});
+
+	function changeToolbar (i) {
+		index = i;
+		$toolbarGroup.removeClass("active").eq(i).addClass("active");
+	};
+
+	function toRight() {
+		$(".head-content").eq( counter ).toggleClass("center-to-right active").prev().toggleClass("left-to-center active");
+		counter--;
+		changeToolbar(counter);
+	};
+
+	function toLeft() {
+		
+		$(".head-content").eq( counter ).toggleClass("center-to-left active").next().toggleClass("right-to-center active");
+		counter++;
+		changeToolbar(counter);
+	};
+
+})();
+
+(function () {
+	var menu = $(".head-nav .head-list");
+	var menuItem = $(".head-nav .head-item");
+
+
+	$(".head-nav .nav-button").click(function () {
+		menu.toggleClass("active");
+	});
+
+	menuItem.click(function (e) {
+		var i = $(this).index();
+		menuItem.removeClass("active").eq(i).addClass("active");
+
+		if (i == 2) {
+			i = i + 1;
+		}
+		
+		$([document.documentElement, document.body]).animate({
+			scrollTop: $(".section").eq(i).offset().top
+		}, 2000);
+		menu.removeClass("active");
+	})
+})();
